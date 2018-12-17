@@ -1,0 +1,8 @@
+{
+    "version": 2,
+    "name": "juniper",
+    "builds": [
+        {"src": "static/**/*", "use": "@now/static"},
+        {"src": "next.config.js", "use": "@now/next"}
+    ]
+}
