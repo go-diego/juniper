@@ -20,8 +20,8 @@ export default function Nav() {
                     <Link href="/">
                         <a className="navbar-item">Home</a>
                     </Link>
-                    <Link href="/documentation">
-                        <a className="navbar-item">Documentation</a>
+                    <Link href="/setup">
+                        <a className="navbar-item">Setup</a>
                     </Link>
                 </div>
             </div>

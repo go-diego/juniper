@@ -6,6 +6,7 @@ const {PHASE_PRODUCTION_SERVER} =
         : require("next-server/constants"); // Get values from `next-server` package when building on now v2
 
 const nextConfig = {
+    pageExtensions: ["js", "jsx", "md", "mdx"],
     webpack: config => {
         // Fixes npm packages that depend on `fs` module
         config.node = {
@@ -27,9 +28,17 @@ module.exports = (phase, {defaultConfig}) => {
         return {};
     }
 
+    const images = require("remark-images");
+    const emoji = require("remark-emoji");
     const withImages = require("next-images");
     const withSass = require("@zeit/next-sass");
+    const withMDX = require("@zeit/next-mdx")({
+        extension: /\.(md|mdx)$/,
+        options: {
+            mdPlugins: [images, emoji]
+        }
+    });
     const {withPlugins} = require("next-compose-plugins");
 
-    return withPlugins([[withSass], [withImages]], nextConfig)(phase, defaultConfig);
+    return withPlugins([[withSass], [withImages], [withMDX]], nextConfig)(phase, defaultConfig);
 };
