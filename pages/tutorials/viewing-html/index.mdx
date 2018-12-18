@@ -1,0 +1,50 @@
+import ArticleLayout from "../../../containers/ArticleLayout";
+import Image from "../../../components/Image.js";
+import googleChromeWebServerImg from "./google-chrome-web-server.png";
+import googleChromeApps from "./chrome-apps.png";
+
+export default ArticleLayout;
+
+# Viewing an HTML file
+
+You started learning web development. You followed tutorials and probably found a **Hello World** assignment. You created a directory somewhere, maybe called it `MyWebsite` and, inside of it, you created
+your first `html` file, one that you might have named `index.html`.
+
+It might have looked something like this:
+
+```markup
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Hello World</h1>
+        <p>Site content.</p>
+    </body>
+</html>
+```
+
+Initialy, to view the changes of you webiste, you double-click on the `index.html` file and a browser window launches, displaying your website in its full glory through the **file protocol** (notice the `file://` at the beginning of the url).
+If you made changes, you then refreshed the browser to see the website updated. For the first week or so, this is a viable way to develop your website locally. However, what you really want to do
+is view your website through a web server.
+
+Why a development web server? Well, when your website is deployed live, it will be served by a web server. Becoming familiar with it now will avoid confusion later. Also, you can't share
+a file protocol url with someone else so they can view the progress of your site. On the other hand, with proper configuration, a local web server will allow you to share your url with the public.
+
+## Google Web server
+
+**Google Web Server** is a browser extension for **Chrome**. To use it (assuming you have Chrome installed):
+
+-   :black_circle: Install it from the <a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en" target="_blank" rel="noreferrer noopener">Chrome Web Store</a>
+
+<Image
+    className="my-4 shadow"
+    src={googleChromeWebServerImg}
+    caption="Install Google Chrome Web Server"
+/>
+
+-   :black_circle: This should have installed the application for you to use. You can find it by navigating to `chrome://apps/` in your Chrome browser. Click on it to launch the web server.
+
+<Image className="my-4 shadow" src={googleChromeApps} caption="List of Google Chrome Apps" />
+
+-   :black_circle: Once the application window pops open, click **Choose Folder** and select the folder that contains the `index.html` file.
+
+-   :black_circle: Click on one of the urls under **Web Server URL(S)** (default is <a href="http://127.0.0.1:8887" target="_blank" rel="noreferrer noopener">http://127.0.0.1:8887</a>) and your site should open up at that url.

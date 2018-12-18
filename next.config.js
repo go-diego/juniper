@@ -30,12 +30,14 @@ module.exports = (phase, {defaultConfig}) => {
 
     const images = require("remark-images");
     const emoji = require("remark-emoji");
+    const rehypePrism = require("@mapbox/rehype-prism");
     const withImages = require("next-images");
     const withSass = require("@zeit/next-sass");
     const withMDX = require("@zeit/next-mdx")({
         extension: /\.(md|mdx)$/,
         options: {
-            mdPlugins: [images, emoji]
+            mdPlugins: [images, emoji],
+            hastPlugins: [rehypePrism]
         }
     });
     const {withPlugins} = require("next-compose-plugins");
